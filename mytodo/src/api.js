@@ -5,7 +5,7 @@ const API_URL = process.env.REACT_APP_BACKEND_URL;
 
 export const getTodos = async () => {
   try {
-    const response = await axios.get(`${API_URL/api/todos}`);
+    const response = await axios.get(`${API_URL}/api/todos`);
     return response.data;
   } catch (error) {
     console.error('Error fetching todos', error);
@@ -15,7 +15,7 @@ export const getTodos = async () => {
 
 export const createTodo = async (task) => {
   try {
-    const response = await axios.post(`${API_URL/api/todos}`, { task });
+    const response = await axios.post(`${API_URL}/api/todos`, { task });
     return response.data;
   } catch (error) {
     console.error('Error creating todo', error);
