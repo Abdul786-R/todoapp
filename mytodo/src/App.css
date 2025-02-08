@@ -1,0 +1,233 @@
+/* General styles for the todo list */
+.todo-list {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Title styling */
+.todo-list h1 {
+  text-align: center;
+  color: #333333;
+  font-size: 28px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Section headers */
+.todo-list h2 {
+  color: #444444;
+  font-size: 20px;
+  margin-top: 30px;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 5px;
+}
+
+/* Styles for each individual todo item */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  word-wrap: break-word;
+}
+
+.todo-item:hover {
+  transform: translateY(-3px);
+  background-color: #f0f8ff;
+}
+
+/* Task content container */
+.todo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  margin-right: 20px;
+  overflow-wrap: break-word;  /* Wrap long text in small screens */
+}
+
+/* Completed task styling */
+.todo-item.completed {
+  background-color: #d7f9d7;
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+
+/* Task title */
+.todo-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+}
+
+/* Styling for the 'Created At' time */
+.todo-item .created-at {
+  font-size: 13px;
+  color: #777777;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Button container */
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;  /* Wrap buttons in smaller screens */
+  justify-content: flex-end;
+}
+
+/* Button styles */
+button {
+  padding: 8px 14px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Delete button */
+button.delete-btn {
+  background-color: #f44336;
+}
+
+button.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Add todo input styling */
+.add-todo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.add-todo input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.add-todo input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.add-todo button {
+  background-color: #007bff;
+}
+
+.add-todo button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+
+/* For small devices (phones) */
+@media (max-width: 600px) {
+  .todo-list {
+    padding: 15px;
+    max-width: 100%;
+    margin: 20px 10px;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 15px;
+  }
+
+  .todo-content {
+    margin-bottom: 10px;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .button-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  button {
+    padding: 8px 12px;
+    width: 48%;  /* Buttons take up more space */
+  }
+
+  .add-todo {
+    flex-direction: column;
+  }
+
+  .add-todo input {
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .add-todo button {
+    width: 100%;
+  }
+}
+
+/* For medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .todo-list {
+    padding: 20px;
+    max-width: 80%;
+  }
+
+  .todo-item {
+    padding: 15px 18px;
+  }
+
+  .todo-content {
+    margin-right: 15px;
+  }
+
+  button {
+    padding: 8px 12px;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 901px) {
+  .todo-list {
+    max-width: 600px;
+  }
+
+  .todo-item {
+    padding: 15px 20px;
+  }
+
+  button {
+    padding: 10px 16px;
+  }
+}
