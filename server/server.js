@@ -13,7 +13,8 @@ app.use(
     cors({
       origin: [
         "http://localhost:3000",
-        "https://hafiz-todo1-frontend.onrender.com",
+        "https://frontend-todo-lrpz.onrender.com",
+,
       ], // Correct origin without trailing slash
       methods: "GET,POST,PUT,DELETE,OPTIONS", // Allowed HTTP methods
       allowedHeaders: "Content-Type,Authorization", // Allowed headers
